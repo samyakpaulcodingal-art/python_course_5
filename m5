@@ -1,0 +1,175 @@
+# Import necessary Modules
+from abc import ABC, abstractmethod
+
+# Create base class
+class Absclass(ABC):
+
+	# Function to print a value
+    def print(self,x):
+        print("Passed value: ", x)
+
+	# Abstract Method
+    @abstractmethod
+    def task(self):
+        print("We are inside Absclass task")
+
+# Create sub class
+class test_class(Absclass):
+    def task(self):
+        print("We are inside test_class task")
+
+#object of test_class created
+test_obj = test_class()
+test_obj.task()
+test_obj.print(100)
+
+# import necessary packages
+from abc import ABC, abstractmethod
+# create a base class
+class Animal(ABC):
+
+    # abstract method
+	# should be implemented by all sub-classes
+	def move(self):
+		pass
+
+# sub classes
+class Human(Animal):
+
+	def move(self):
+		print("I can walk and run")
+
+class Snake(Animal):
+
+	def move(self):
+		print("I can crawl")
+
+class Dog(Animal):
+
+	def move(self):
+		print("I can bark")
+
+class Lion(Animal):
+
+	def move(self):
+		print("I can roar")
+		
+# Driver code
+R = Human()
+R.move()
+
+K = Snake()
+K.move()
+
+R = Dog()
+R.move()
+
+K = Lion()
+K.move()
+
+# Class 1
+class India():
+    def capital(self):
+        print("New Delhi is the capital of India.")
+ 
+    def language(self):
+        print("Hindi is the most widely spoken language of India.")
+ 
+    def type(self):
+        print("India is a developing country.")
+ 
+# Class 2
+class USA():
+    def capital(self):
+        print("Washington, D.C. is the capital of USA.")
+ 
+    def language(self):
+        print("English is the primary language of USA.")
+ 
+    def type(self):
+        print("USA is a developed country.")
+ 
+# Object Creation
+obj_ind = India()
+obj_usa = USA()
+
+# Common Interface
+for country in (obj_ind, obj_usa):
+    country.capital()
+    country.language()
+    country.type()
+
+
+    # Smart Device Command Center
+ 
+# PART 1: Import tools for abstraction
+from abc import ABC, abstractmethod
+ 
+# PART 2: Create an abstract class
+class SmartDevice(ABC):
+ 
+    # Common method
+    def show_device(self, name):
+        print("Device Name:", name)
+ 
+    # Abstract method
+    @abstractmethod
+    def turn_on(self):
+        pass
+ 
+ 
+# PART 3: Create subclasses that override the abstract method
+class SmartLight(SmartDevice):
+    def turn_on(self):
+        print("Smart Light is now ON")
+ 
+ 
+class SmartFan(SmartDevice):
+    def turn_on(self):
+        print("Smart Fan is now ON")
+ 
+ 
+class SmartSpeaker(SmartDevice):
+    def turn_on(self):
+        print("Smart Speaker is now ON")
+ 
+ 
+# PART 4: Create objects and call their methods
+light = SmartLight()
+fan = SmartFan()
+speaker = SmartSpeaker()
+ 
+light.show_device("Living Room Light")
+light.turn_on()
+ 
+fan.show_device("Bedroom Fan")
+fan.turn_on()
+ 
+speaker.show_device("Music Speaker")
+speaker.turn_on()
+ 
+ 
+# PART 5: Polymorphism without inheritance
+# These classes do not inherit from SmartDevice,
+# but they share the same method name.
+ 
+class SecurityCamera:
+    def check_status(self):
+        print("Security Camera is recording")
+ 
+ 
+class DoorLock:
+    def check_status(self):
+        print("Door Lock is secure")
+ 
+ 
+# PART 6: Use the shared method name
+devices = [SecurityCamera(), DoorLock()]
+ 
+print("")
+print("===== SMART DEVICE STATUS =====")
+ 
+for device in devices:
+    device.check_status()
+ 
+print("===============================")
